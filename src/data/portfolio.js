@@ -6,7 +6,7 @@ export const personalInfo = {
   "name": "Luai",
   "roles": "UI/UX Designer | Front-End Developer",
   "bio": "Building delightful digital experiences.",
-  "greeting": "Hello Everyone!",
+  "greeting": "Welcome to my digital space",
   "location": "Sana'a, Yemen",
   "availability": "Open to remote"
 };
@@ -235,7 +235,7 @@ export const projects = [
     "title": "AMTC-Yemen",
     "description": "AMTC-Yemen is an official motorsport and racing-inspired website for Toyota Gazoo Yemen, designed to bring the excitement of racing to Yemeni motorsport enthusiasts. Built with a strong passion for cars and racing, the platform blends sleek black and red visual elements to evoke energy and adrenaline. The website provides a comprehensive hub for racers, fans, and the community, including racer profiles, blogs, communities, news, a “Dream Car Drawing” competition, and upcoming race details.",
     "category": "Web Design",
-    "theme": "dark",
+    "theme": "white",
     "imageBgColor": "#1A1A1A",
     "imageUrl": "/projects/gazoo.jpeg",
     "link": "/project/4",

@@ -183,8 +183,7 @@ export default function App() {
                 <ScrollReveal delay={60}>
                   <div className="bento-card p-10 flex flex-col justify-center min-h-[280px]">
                     <h2 className="text-5xl font-bold leading-[1.1] tracking-tight" style={{ color: "var(--t-t1)" }}>
-                      {personalInfo.greeting} <br />
-                      I'm <span style={{ color: "var(--color-accent)" }}>{personalInfo.name}</span>.
+                      {personalInfo.greeting}
                     </h2>
                   </div>
                 </ScrollReveal>
