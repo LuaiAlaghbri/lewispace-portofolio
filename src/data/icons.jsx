@@ -2,7 +2,7 @@
 // Hardcoded SVG wrappers to avoid importing the massive 5MB react-icons bundle.
 
 const SVGWrapper = ({ children, style, className }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" style={style} className={className}>
+  <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" style={style} className={className}>
     {children}
   </svg>
 );
