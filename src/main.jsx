@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/"            element={<App />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
-        <Route path="/admin"       element={<Admin />} />
+        {import.meta.env.DEV && <Route path="/admin" element={<Admin />} />}
         <Route path="*"            element={<NotFound />} />
       </Routes>
     </BrowserRouter>
