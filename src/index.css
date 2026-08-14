@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ── Design Tokens (Tailwind v4) ── */
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-background: var(--t-surface);
+  --color-card:       var(--t-raised);
+  --color-border:     var(--t-border);
+  --color-accent:     #FF6B6B;
+  --color-accent-hover: #FC5858;
+  --color-text-primary:   var(--t-t1);
+  --color-text-secondary: var(--t-t2);
+  --color-text-muted:     var(--t-t3);
+}
+
+/* Tell Tailwind v4 to generate dark: variants when html has .dark class */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Light Mode (default) ── */
+:root {
+  color-scheme: light;
+  --t-surface:  #FAF7F2;
+  --t-raised:   #FFFFFF;
+  --t-overlay:  #F3EEE7;
+  --t-border:   #EFEBE4;
+  --t-t1:       #1A1715;
+  --t-t2:       #6B655E;
+  --t-t3:       #A9A29A;
+
+  /* card theme colors */
+  --color-card-dark:  #121019;
+  --color-card-green: #38A169;
+  --color-border-dark: #2A2536;
+  --color-text-dark-primary:   #FFFFFF;
+  --color-text-dark-secondary: #A09BAA;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  color-scheme: dark;
+  --t-surface:  #110F0F;
+  --t-raised:   #1A1717;
+  --t-overlay:  #221E1E;
+  --t-border:   #2C2626;
+  --t-t1:       #F2EDEB;
+  --t-t2:       #9F9793;
+  --t-t3:       #5E5653;
+
+  --color-card-dark:   #1E1B2A;
+  --color-card-green:  #276749;
+  --color-border-dark: #3D3550;
+}
+
+/* ── Smooth theme transitions ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+}
+
+/* ── Base ── */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--t-surface);
+  color: var(--t-t1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #E0DBD4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D1CBC3; }
+
+.dark ::-webkit-scrollbar-thumb { background: #3D3535; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #4D4444; }
+
+/* ── Bento Card ── */
+.bento-card {
+  border-radius: 1.5rem;
+  border: 1px solid var(--t-border);
+  background-color: var(--t-raised);
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.dark .bento-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+.dark .bento-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Card theme variants */
+.bento-card.dark-theme {
+  background-color: var(--color-card-dark);
+  border-color: var(--color-border-dark);
+  color: var(--color-text-dark-primary);
+}
+.bento-card.green-theme {
+  background-color: var(--color-card-green);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+/* ── Animations ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.30s; }
+
+@keyframes tennis-bounce {
+  0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+  15% { transform: translateY(-120px) scaleY(1.05) scaleX(0.95) rotate(90deg); }
+  30% { transform: translateY(0) scaleY(0.8) scaleX(1.2) rotate(180deg); }
+  45% { transform: translateY(-60px) scaleY(1.02) scaleX(0.98) rotate(270deg); }
+  60% { transform: translateY(0) scaleY(0.9) scaleX(1.1) rotate(360deg); }
+  75% { transform: translateY(-20px) scaleY(1.01) scaleX(0.99) rotate(450deg); }
+  85% { transform: translateY(0) scaleY(0.95) scaleX(1.05) rotate(500deg); }
+  95% { transform: translateY(-5px) rotate(540deg); }
+}
+
