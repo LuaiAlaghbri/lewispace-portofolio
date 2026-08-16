@@ -101,7 +101,7 @@ export default function App() {
             </div>
           )}
           {project.imageUrl ? (
-            <img src={project.imageUrl} alt={project.title}
+            <img src={project.imageUrl} alt={`${project.title} - ${project.category || 'Portfolio'} Project by ${personalInfo.name}`}
               className="w-[85%] h-auto rounded-t-xl shadow-2xl relative top-4 transition-transform duration-500 group-hover:-translate-y-4" />
           ) : (
             <div className={`w-[85%] h-[105%] rounded-t-xl shadow-2xl relative top-4 transition-transform duration-500 group-hover:-translate-y-4 flex flex-col p-4 border-t border-x ${isDarkTheme ? "bg-[#111115] border-gray-800" : "bg-white border-gray-200"}`}>
@@ -163,6 +163,7 @@ export default function App() {
                             target="_blank"
                             rel="noopener noreferrer"
                             title={link.platform}
+                            aria-label={`Visit my ${link.platform}`}
                             className="flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-300 hover:scale-110 hover:-translate-y-0.5"
                             style={{
                               backgroundColor: "var(--t-surface)",
@@ -336,6 +337,7 @@ export default function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={link.platform}
+                  aria-label={`Visit my ${link.platform}`}
                   className="flex h-8 w-8 items-center justify-center rounded-lg transition-all duration-200 hover:scale-110"
                   style={{ color: "var(--t-t3)" }}
                 >
