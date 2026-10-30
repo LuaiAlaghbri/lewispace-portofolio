@@ -23,10 +23,6 @@ export const socialLinks = [
     "url": "https://www.linkedin.com/in/luai-alaghbri-7a98b723a/"
   },
   {
-    "platform": "Twitter",
-    "url": "https://x.com/luaiaghbri"
-  },
-  {
     "platform": "Instagram",
     "url": "https://www.instagram.com/luai_alaghbri?igsh=OWVjMWNkdHZnazB3"
   }
