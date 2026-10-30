@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { personalInfo, stats, techStack, projects, accentColor, sectionVisibility, socialLinks, resumeUrl } from "./data/portfolio";
 import { resolveIcon } from "./data/icons";
-import SplashScreen from "./components/SplashScreen";
 import ThemeToggle from "./components/ThemeToggle";
 import ScrollReveal from "./components/ScrollReveal";
 import TestimonialsCard from "./components/TestimonialsCard";
@@ -58,9 +57,6 @@ function resolveSocialIcon(platform) {
 }
 
 export default function App() {
-  const [splashDone, setSplashDone] = useState(
-    () => typeof sessionStorage !== "undefined" && !!sessionStorage.getItem("luai_splash_shown")
-  );
   const navigate = useNavigate();
 
   const column1Projects = projects.filter((p) => p.column === 1);
@@ -127,8 +123,6 @@ export default function App() {
 
   return (
     <>
-      {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
-
       <div className="min-h-dvh font-sans" style={{ backgroundColor: "var(--t-surface)", color: "var(--t-t1)" }}>
 
         <div className="fixed top-4 right-4 z-40">
